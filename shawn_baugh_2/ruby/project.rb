@@ -4,7 +4,6 @@ class Project
   def initialize(name, description)
       @name = name
       @description = description
-      @elevator_pitch = name + ' ' + description
   end
 
   def elevator_pitch
