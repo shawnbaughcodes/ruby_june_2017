@@ -1,0 +1,9 @@
+<h1>Surveys</h1>
+<div class="">
+    <% @surveys.each do |survey| %>
+    <p><%=survey.name%></p>
+    <p><%=survey.dojo_location%></p>
+    <p><%=survey.favorite_language%></p>
+    <p><%=survey.comment%></p>
+    <% end %>
+</div>

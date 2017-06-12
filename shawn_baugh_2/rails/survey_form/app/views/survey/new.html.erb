@@ -1,0 +1,14 @@
+<h1>New Survey</h1>
+<form class="" action="/surveys" method="post">
+    <input type="hidden" name="authenticity_token" value="<%form_authenticity_token%>">
+    Name:
+    <input type="text" name="survey[name]">
+    Dojo Location:
+    <input type="text" name="survey[dojo_location]">
+    Favorite Language:
+    <input type="text" name="survey[favorite_language]">
+    Comment(optional):
+    <input type="text" name="survey[comment]">
+    <input type="submit" value="Submit">
+</form>
+<a href="/"><button>Cancel</button></a>
