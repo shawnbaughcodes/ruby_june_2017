@@ -1,4 +1,5 @@
 <h1>Dojos</h1>
+<a href="/new"><button>Add Dojo</button></a>
 <table>
     <thead>
         <th>Branch</th>
@@ -12,6 +13,9 @@
         <td><%=x.street%></td>
         <td><%=x.city%></td>
         <td><%=x.state%></td>
+        <td><a href="/dojo/<%= x.id %>"><button>Show</button></a></td>
+        <td><a href="/dojo/edit/<%= x.id %> "><button>Edit</button></a></td>
+        <td><a href="/dojo/<%= x.id %>" data-method="delete"><button>Delete</button></a></td>
     </tbody>
     <% end %>
 </table>

@@ -1,0 +1,23 @@
+<h1>New Student</h1>
+<div class="new_container">
+    <form class="" action="/students" method="post">
+        <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+        First Name:
+        <input type="text" name="student[first_name]">
+        Last Name:
+        <input type="text" name="student[last_name]">
+        Email:
+        <input type="text" name="student[email]">
+        Dojo:
+        <select class="" name="student[dojo]">
+            <% @dojos.each do |d| %>
+                <% if d.id.to_i == params[:id].to_i %>
+                    <option selected value="<%= d.id %>"><%= d.branch %></option>
+                <%else%>
+                    <option value="<%=d.id%>"><%= d.branch %></option>
+                <%end%>
+            <% end %>
+        </select>
+        <input type="submit" value="Add Student">
+    </form>
+</div>

@@ -1,0 +1,25 @@
+<div class="">
+    <a href="/"><button>Home</button></a>
+    <a href="/edit/<%=@dojo.id%>"><button>Edit</button></a>
+    <h1><%=@dojo.branch%> Dojo</h1>
+    <p><%=@dojo.street%></p>
+    <p><%=@dojo.city%></p>
+    <p><%=@dojo.state%></p>
+    <h2>Student Roster</h2>
+    <table>
+        <thead>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </thead>
+        <% @students.each do |s|%>
+        <tbody>
+                <td><%=s.first_name%></td>
+                <td><%=s.last_name%></td>
+                <td><%=s.email%></td>
+        </tbody>
+        <%end%>
+    </table>
+    <a href="/dojo/<%=@dojo.id%>/students/new"><button>New Student</button></a>
+</div>
