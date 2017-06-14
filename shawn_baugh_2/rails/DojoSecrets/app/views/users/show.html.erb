@@ -1,0 +1,20 @@
+<h1><%=@current_user.name%> Secrets</h1>
+<h3>New Secret</h3>
+<form action="/secrets" method="post">
+    <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+    <textarea name="secret[content]" rows="8" cols="80"></textarea>
+    <input type="submit" value="Create Secret">
+</form>
+<h2>Secrets</h2>
+<%@current_user.secrets.each do |s|%>
+    <% if !@secret_ids %>
+        <h4><%=s.content%></h4>
+        <a href="/secrets/<%=s.id%>" data-method='delete'><button>Delete</button></a>
+    <% end %>
+<%end%>
+
+<h2>Secrets Liked</h2>
+<%@current_user.secrets_liked.each do |s|%>
+<h4><%=s.content%></h4>
+<p>Likes <%=s.likes.length%></p>
+<%end%>
